@@ -80,13 +80,7 @@ Os dados dos anúncios serão armazenados em uma estrutura de dados, contendo as
 
 ## Bibliotecas:
 
---> Bibliotecas utilizadas:
-
-- [Coloque aqui as bibliotecas utilizadas no projeto]
-
-- Biblioteca utilizada para [descrever a função da biblioteca].
-
-- Comandos/métodos utilizados: [coloque os principais comandos utilizados]
+- Não foram utilizadas bibliotecas externas. O projeto utiliza recursos próprios do Python para realizar as operações do CRUD.
 
 ## CRUD:
 
