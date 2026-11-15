@@ -23,13 +23,13 @@
 
 | Campo | Preencha |
 |---|---|
-| **Nome do estudante** | _escreva aqui_ |
-| **Curso / Módulo** | _ex.: ADS · 2º período_ |
+| **Nome do estudante** | Joás franco rodrigues |
+| **Curso / Módulo** | Engenharia de software · 2º período |
 | **Unidade curricular** | Algoritmos e Programação — UnDB 2026.2 |
 | **Professor** | Rondineli Seba Salomão |
 | **App-base do meu CRUD** | _ex.: um app de delivery, um app de músicas…_ |
 | **Link do meu repositório** | https://github.com/joasfranco/Algoritmos-e-programacao |
-| **Dupla de revisão (Campo 05)** | _nome do colega cujo CRUD vou revisar / que revisa o meu_ |
+| **Dupla de revisão (Campo 05)** | Enzo figueiredo e Caio rafael/ Davi gael |
 | **Função neste ciclo** | _Autor do meu CRUD · Revisor do CRUD de um colega_ |
 
 ---
