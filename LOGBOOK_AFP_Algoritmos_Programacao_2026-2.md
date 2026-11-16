@@ -216,7 +216,7 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 1. Conhecimento prévio sobre variáveis e sua utilização para armazenar informações durante a execução de um programa.
 2. Conhecimento básico sobre tipos de dados, compreendendo a utilização de números inteiros, números decimais e textos.
 3. Conhecimento sobre comandos de entrada e saída, como input() e print(), para receber informações do usuário e exibir resultados.
-4. _…_ *(opcional)*
+
 
 **1b. Lacunas — o que não sei e preciso descobrir (mínimo 3, com precisão técnica):**
 1. Aprofundar o conhecimento sobre o tipo de dado char e compreender sua utilização em variáveis.
@@ -255,7 +255,7 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 #### Registro do Ciclo 02 — 19/08
 1. **Desafio do ciclo (em 1 frase):** Aprofundar os conhecimentos sobre variáveis, tipos de dados e comandos de entrada e saída em Python.
-2. **O que implementei (commits / arquivos / links):** Realizei estudos e exercícios práticos sobre os conteúdos apresentados na aula, utilizando exemplos em Python para testar a declaração de variáveis, os tipos de dados e a entrada e saída de informações.
+2. **O que implementei (commits / arquivos / links):** Realizei estudos e exercícios práticos utilizando o arquivo aula1908PA.py, no qual pratiquei a declaração, inicialização e atribuição de valores a variáveis, além da identificação e utilização de diferentes tipos de dados em Python, como int, float e str.
 3. **Objeto(s) de conhecimento mobilizado(s):** Variáveis, atribuição de valores, tipos primitivos (int, float, str e bool), conversão de tipos de dados (type casting) e comandos de entrada e saída (input() e print()).
 4. **Desvio ou erro encontrado + causa técnica:** Durante os estudos, percebi a necessidade de aprofundar a compreensão sobre a conversão de tipos de dados, principalmente ao receber informações do usuário por meio do comando input().
 5. **Decisão de ajuste + fonte:** Decidi aprofundar os estudos utilizando as aulas do Curso em Vídeo, de Gustavo Guanabara, e o ChatGPT como assistente de aprendizagem, para esclarecer dúvidas e compreender melhor os conceitos apresentados.
@@ -294,13 +294,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 04 — 02/09
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** Compreender e aplicar estruturas condicionais em Python para controlar o fluxo de execução do programa e estabelecer regras de negócio para o CRUD Anuncify.
+2. **O que implementei (commits / arquivos / links):** Realizei exercícios práticos de programação utilizando o arquivo aula2608PA, no qual pratiquei a aplicação das estruturas condicionais if, elif e else em Python, desenvolvendo a compreensão sobre o controle de fluxo e a tomada de decisões dentro de um programa.
+3. **Objeto(s) de conhecimento mobilizado(s):** Foram estudadas as estruturas condicionais if, elif e else, responsáveis pelo controle de fluxo de execução de um programa. Também foram trabalhadas expressões booleanas, operadores relacionais e operadores lógicos, utilizados na avaliação de condições. No contexto do Anuncify, esses conhecimentos podem ser aplicados em regras de negócio, como impedir o cadastro de anúncios com preços negativos e verificar se os campos obrigatórios foram preenchidos.
+4. **Desvio ou erro encontrado + causa técnica:** Durante os exercícios, foi identificada uma dificuldade na organização das estruturas condicionais if, elif e else. A causa técnica estava relacionada à indentação incorreta dos blocos de código, fazendo com que determinadas instruções não fossem associadas à condição esperada.
+5. **Decisão de ajuste + fonte:** Decidi reforçar o estudo das estruturas condicionais por meio de exercícios práticos em Python e utilizar o ChatGPT como ferramenta de apoio para esclarecer dúvidas sobre a aplicação de if, elif e else em situações reais de programação.
+6. **Feedback recebido e o que mudei:** As explicações e orientações utilizadas durante os estudos contribuíram para melhorar a compreensão sobre o funcionamento das estruturas condicionais e sua importância na validação de dados e na implementação de regras de negócio.
+7. **Próximo passo:** Aprofundar a utilização das estruturas condicionais e começar a aplicá-las no Anuncify, desenvolvendo validações para os dados dos anúncios, como preço, título e descrição
 
 ---
 
