@@ -186,7 +186,7 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 2. **O que implementei (commits / arquivos / links):** Foi realizado a definição do projeto de um CRUD em Python inspirado em uma plataforma de classificados, utilizando a OLX como referência. Também foi planejada a estrutura inicial do repositório e a configuração do ambiente de desenvolvimento no VS Code
 3. **Objeto(s) de conhecimento mobilizado(s):** Possuía conhecimentos básicos de Python, com pouca familiaridade com lógica de programação e suas estruturas. Em relação ao Git e GitHub, sabia apenas criar repositórios, mas ainda não dominava outras funcionalidades de controle de versão, como commits e gerenciamento do histórico de alterações.
 4. **Desvio ou erro encontrado + causa técnica:** Não foram encontradas dificuldades durante a configuração do ambiente de desenvolvimento. A instalação e a preparação das ferramentas ocorreram normalmente, sem apresentar problemas técnicos.
-5. **Decisão de ajuste + fonte:** Utilizei o ChatGPT como ferramenta de apoio para orientar a configuração do ambiente e compreender o processo de integração entre as ferramentas utilizadas. A partir das orientações recebidas, comecei a seguir um passo a passo para realizar as configurações necessárias e preparar o ambiente para o desenvolvimento do CRUD.
+5. **Decisão de ajuste + fonte:** Decidi organizar o Anuncify em uma pasta específica dentro do repositório Algoritmos-e-programacao, separando os arquivos do projeto das demais atividades. O CRUD será desenvolvido em Python, inspirado na OLX, utilizando Git e GitHub para controlar versões e acompanhar as alterações do código.
 6. **Feedback recebido e o que mudei:** Até o momento, não foram recebidos feedbacks externos sobre o projeto. A proposta inicial foi mantida, considerando os requisitos definidos para o sistema de classificados.
 7. **Próximo passo:** Começar a aplicar os conhecimentos adquiridos em Python, aprofundando a lógica de programação e desenvolvendo gradualmente as funcionalidades do CRUD inspirado na OLX.
 
@@ -213,19 +213,19 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 *Grupo 1 | Prazo segunda 16/11, 23h59 | SEM CONSULTA*
 
 **1a. Objetos de conhecimento identificados (mínimo 3, com vocabulário técnico):**
-1. _…_
-2. _…_
-3. _…_
+1. Conhecimento prévio sobre variáveis e sua utilização para armazenar informações durante a execução de um programa.
+2. Conhecimento básico sobre tipos de dados, compreendendo a utilização de números inteiros, números decimais e textos.
+3. Conhecimento sobre comandos de entrada e saída, como input() e print(), para receber informações do usuário e exibir resultados.
 4. _…_ *(opcional)*
 
 **1b. Lacunas — o que não sei e preciso descobrir (mínimo 3, com precisão técnica):**
-1. _…_
-2. _…_
-3. _…_
+1. Aprofundar o conhecimento sobre o tipo de dado char e compreender sua utilização em variáveis.
+2. Compreender melhor a conversão de tipos de dados (type casting) e sua importância ao receber informações do usuário.
+3. Aprender a utilizar e manipular corretamente os dados recebidos por meio de comandos de entrada, evitando incompatibilidades entre os tipos de dados.
 
 **1c. Hipótese inicial em até 5 linhas — com lógica da área de formação:**
 
-> _…_
+> Minha hipótese inicial era que conseguiria utilizar os conhecimentos básicos sobre variáveis, tipos de dados e entrada/saída para desenvolver as primeiras funcionalidades do meu CRUD em Python. Esperava encontrar dificuldades na utilização de diferentes tipos de dados e na conversão das informações recebidas pelo usuário, principalmente durante o cadastro e armazenamento dos anúncios.
 
 ### 🧩 CAMPO 02 — Aprofundamento pós-aula
 *AV Qualis — Grupo 1 | Segunda 16/11, 23h59*
@@ -234,30 +234,33 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 **2a. Aprofundamento dos objetos de conhecimento (mínimo 2 referências com síntese da contribuição para a solução):**
 
-- **Referência 1:** _…_ — **Contribuição:** _…_
-- **Referência 2:** _…_ — **Contribuição:** _…_
+- **Referência 1:** Curso Python #06 – Tipos Primitivos e Saída de Dados, de Gustavo Guanabara (Curso em Vídeo). — **Contribuição:** A aula aprofundou o conhecimento sobre os tipos primitivos do Python, apresentando o tipo bool e explicando melhor a utilização de int(), float() e str(). Também demonstrou como utilizar input() para receber informações do usuário e print() para exibir dados na tela, além da importância da conversão de tipos para trabalhar corretamente com os valores recebidos.
+- **Referência 2:**Exercício Python #004 – Dissecando uma Variável, de Gustavo Guanabara (Curso em Vídeo). — **Contribuição:** O exercício demonstrou como analisar uma variável a partir de uma informação digitada pelo usuário, identificando seu tipo primitivo e verificando características do valor recebido. Isso contribuiu para compreender melhor como os dados são armazenados e como suas propriedades podem ser identificadas utilizando recursos do Python.
 
-**2b. Hipótese revisada — o que mudou em relação ao Campo 01 e por quê:**
+  Durante o processo de aprendizagem, utilizei o ChatGPT como assistente de aprendizagem para esclarecer dúvidas, reforçar os conteúdos estudados e compreender melhor os conceitos de variáveis, tipos de dados e comandos de entrada e saída em Python.
 
-> _…_
+**2b. Hipótese revisada — o que mudou em relação ao Campo 01 e por quê:** 
+
+> Após o aprofundamento, compreendi melhor a utilização dos tipos primitivos e a importância da conversão de dados em Python. Também percebi que o comando input() recebe informações inicialmente como texto, sendo necessário converter os valores quando se deseja trabalhar com números. Com isso, passei a entender melhor como esses conceitos podem ser aplicados futuramente no cadastro de anúncios do meu CRUD.
 
 **2c. Dimensionamento inicial de recursos (recurso, quantidade estimada, justificativa técnica — mínimo 3 itens):**
 
 | RECURSO / MATERIAL / INSUMO | QUANTIDADE ESTIMADA | JUSTIFICATIVA TÉCNICA |
 |---|---|---|
-| _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ |
+|Aulas de Python | 2 aulas | Revisar os conteúdos de variáveis, tipos de dados e entrada e saída de informações. |
+| Estudos e exercícios práticos | 3 dias | Reforçar os conhecimentos adquiridos e praticar os conceitos apresentados nas aulas. |
+| Testes de funcionalidades | 2 operações CRUD | Verificar o funcionamento de cadastro, consulta, atualização e exclusão de anúncios. |
+| Arquivos do projeto | 1 arquivo Python inicial | Organizar o código e concentrar as primeiras funcionalidades do Anuncify. |
+| Repositório GitHub | 1 repositório | Armazenar o projeto e acompanhar sua evolução por meio do histórico de commits. |
 
 #### Registro do Ciclo 02 — 19/08
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** Aprofundar os conhecimentos sobre variáveis, tipos de dados e comandos de entrada e saída em Python.
+2. **O que implementei (commits / arquivos / links):** Realizei estudos e exercícios práticos sobre os conteúdos apresentados na aula, utilizando exemplos em Python para testar a declaração de variáveis, os tipos de dados e a entrada e saída de informações.
+3. **Objeto(s) de conhecimento mobilizado(s):** Variáveis, atribuição de valores, tipos primitivos (int, float, str e bool), conversão de tipos de dados (type casting) e comandos de entrada e saída (input() e print()).
+4. **Desvio ou erro encontrado + causa técnica:** Durante os estudos, percebi a necessidade de aprofundar a compreensão sobre a conversão de tipos de dados, principalmente ao receber informações do usuário por meio do comando input().
+5. **Decisão de ajuste + fonte:** Decidi aprofundar os estudos utilizando as aulas do Curso em Vídeo, de Gustavo Guanabara, e o ChatGPT como assistente de aprendizagem, para esclarecer dúvidas e compreender melhor os conceitos apresentados.
+6. **Feedback recebido e o que mudei:** Utilizei as explicações e orientações recebidas durante os estudos para reforçar os conceitos que ainda apresentavam dúvidas, principalmente sobre os tipos de dados e a utilização de variáveis.
+7. **Próximo passo:** Continuar aprofundando os conhecimentos em Python e começar a aplicar os conceitos estudados no desenvolvimento do CRUD Anuncify, utilizando variáveis e entradas de dados para estruturar o cadastro de anúncios.
 
 ## 🟢 CICLO 03 — 26/08 — Operadores, fluxogramas e paradigmas
 
@@ -270,13 +273,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 03 — 26/08
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** Compreender e aplicar os operadores da linguagem Python, desenvolver o raciocínio lógico por meio de fluxogramas e conhecer os diferentes paradigmas de programação.
+2. **O que implementei (commits / arquivos / links):** Realizei estudos e exercícios práticos envolvendo operadores, expressões e representação de algoritmos por meio de fluxogramas, buscando compreender sua aplicação na construção de soluções computacionais.
+3. **Objeto(s) de conhecimento mobilizado(s):** Foram trabalhados operadores aritméticos (+, -, *, /), relacionais (==, !=, >, <, >=, <=) e lógicos (and, or, not), utilizando tipos de dados como int, float e bool. Também foram abordados os fluxogramas, que permitem representar visualmente o fluxo de execução de um algoritmo, e os paradigmas de programação, que apresentam diferentes formas de estruturar e desenvolver soluções computacionais.
+4. **Desvio ou erro encontrado + causa técnica:** A principal dificuldade encontrada foi diferenciar os operadores relacionais >= (maior ou igual a) e <= (menor ou igual a). Essa dificuldade ocorreu devido à semelhança visual entre os símbolos e à necessidade de compreender corretamente a direção da comparação lógica realizada por cada operador.
+5. **Decisão de ajuste + fonte:** Decidi reforçar o estudo dos operadores relacionais por meio de exemplos práticos e exercícios em Python, buscando compreender melhor suas diferenças e aplicações em expressões condicionais. Utilizei o ChatGPT como ferramenta de apoio para esclarecer dúvidas e consolidar o entendimento desses conceitos.
+6. **Feedback recebido e o que mudei:** A partir das explicações e orientações utilizadas durante os estudos, consegui identificar a diferença entre os operadores >= e <=, melhorando a compreensão sobre comparações relacionais e sua aplicação na lógica de programação.
+7. **Próximo passo:** Continuar praticando os conceitos de lógica de programação e operadores em Python, buscando aplicar os conhecimentos adquiridos na estruturação das funcionalidades do CRUD Anuncify.
 
 ## 🟢 CICLO 04 — 02/09 — Estruturas condicionais: `if`, `elif`, `else`
 
