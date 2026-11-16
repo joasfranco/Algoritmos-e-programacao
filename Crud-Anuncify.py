@@ -1,12 +1,12 @@
-# CRUD de anúncios - OLX (primeiro commit)
+# CRUD de anúncios - Anuncify (só variáveis, if/elif/else e while)
 anuncio1 = anuncio2 = anuncio3 = ""  # cada anúncio é um texto só, vazio = espaço livre
 opcao = ""
- 
+
 while opcao != "5":
-    print("\n--- OLX ---\n1. Criar anúncio\n2. Ver anúncios\n3. Modificar anúncio\n4. Deletar anúncio\n5. Sair")
+    print("\n--- Anuncify ---\n1. Criar anúncio\n2. Ver anúncios\n3. Modificar anúncio\n4. Deletar anúncio\n5. Sair")
     opcao = input("Escolha: ")
     num = ""
- 
+
     if opcao == "1":
         if anuncio1 == "":
             num = "1"
@@ -33,18 +33,29 @@ while opcao != "5":
             print("3 -", anuncio3)
     elif opcao != "5":
         print("Opção inválida.")
- 
+
     if num != "":  # criar, modificar e deletar terminam aqui
+        texto = ""
         if opcao == "4":
-            texto = ""
+            if input("Tem certeza que quer deletar? (s/n): ") != "s":
+                print("Exclusão cancelada.")
+                num = ""
         else:
-            texto = (input("Título: ") + " | " + input("Descrição: ") + " | R$ " + input("Preço: ")
-                     + " | " + input("Categoria: ") + " | " + input("Vendedor: ") + " | " + input("Localização: "))
-        if num == "1":
-            anuncio1 = texto
-        elif num == "2":
-            anuncio2 = texto
-        else:
-            anuncio3 = texto
+            titulo = input("Título: ")
+            descricao = input("Descrição: ")
+            preco = input("Preço: ")
+            if titulo == "" or preco == "":
+                print("Título e preço são obrigatórios, o anúncio não foi salvo.")
+                num = ""
+            else:
+                texto = (titulo + " | " + descricao + " | R$ " + preco + " | " + input("Categoria: ")
+                         + " | " + input("Vendedor: ") + " | " + input("Localização: "))
+
+    if num == "1":  # só grava se não deu erro lá em cima (num continua preenchido)
+        anuncio1 = texto
+    elif num == "2":
+        anuncio2 = texto
+    elif num == "3":
+        anuncio3 = texto
+    if num != "":
         print("Feito!")
- 
