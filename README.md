@@ -1,5 +1,5 @@
 # Algoritmos-e-programacao
-CRUD de Anúncios - OLX
+CRUD de Anúncios - Anuncify
 
 ## IDEIA:
 
