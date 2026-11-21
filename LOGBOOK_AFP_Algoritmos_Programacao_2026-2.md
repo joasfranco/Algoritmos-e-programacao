@@ -412,7 +412,7 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 > **Obrigatório e avaliado. Print sem análise crítica = devolução imediata. Reproduzir a IA sem questionamento = reprovado.**
 
-**4a. Ferramenta:** _…_  **Data:** _DD/MM/AAAA_
+**4a. Ferramenta:** Verdent (modelo GPT, OpenAI)  **Data:** 13/09/2026
 
 **4b. Pergunta formulada (transcrita integralmente):**
 
