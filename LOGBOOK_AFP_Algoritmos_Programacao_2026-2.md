@@ -393,19 +393,19 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 *AV Qualis — Grupo 2 | Sábado 21/11, 23h59*
 
 **3a. O que descobri que mudou minha compreensão do problema (mínimo 2 achados, com objeto de conhecimento associado):**
-1. _…_ — *Objeto de conhecimento:* _…_
-2. _…_ — *Objeto de conhecimento:* _…_
-3. _…_ *(opcional)*
+1. Percebi que usar uma variável de controle (num) para indicar qual slot ("1", "2" ou "3") será criado, modificado ou excluído — e zerá-la (num = "") quando ocorre erro de validação ou cancelamento — permite centralizar a gravação/atualização no final do laço sem repetir o bloco de escrita em vários ifs. — Objeto de conhecimento: Variáveis de controle, estruturas condicionais (if/elif/else) e fluxo de execução em laço while
+2. Compreendi que, sem listas ou dicionários, cada anúncio fica em uma variável individual (anuncio1, anuncio2, anuncio3) concatenando os campos com " | ", o que exige checar explicitamente cada slot com == "" ou != "" e validar campos obrigatórios (titulo == "" ou preco == "") antes de sobrescrever qualquer anúncio existente. — Objeto de conhecimento: Variáveis, operadores relacionais (==, !=) e operadores lógicos (and, or) na validação de estado.
+3. Notei que, na opção de listar (opcao == "2"), concatenar anuncio1 + anuncio2 + anuncio3 == "" verifica de forma simples se todos os três espaços estão vazios, mas ainda exige ifs separados para exibir apenas os anúncios não vazios mantendo o número original do slot. — Objeto de conhecimento: Expressões booleanas, concatenação de strings e estruturas condicionais.
 
 **3b. Desvio em relação ao Campo 02 (ao menos 1 — causa técnica):**
-- **Desvio:** _…_
-- **Causa técnica:** _…_
+- **Desvio:** No Campo 02, eu havia planejado testar separadamente cada operação do CRUD (criar, ver, modificar e deletar) e verificar casos de erro isolados; durante a execução do código no while, acabei testando a validação de campos obrigatórios (titulo == "" ou preco == "") e o cancelamento da exclusão (!= "s") dentro do mesmo fluxo encadeado, sem rodar um teste isolado para o caso em que os três slots (anuncio1, anuncio2, anuncio3) já estão ocupados e o usuário tenta criar um quarto anúncio.
+- **Causa técnica:**O desvio ocorreu porque, com apenas três variáveis fixas para os anúncios, o estado dos slots dependia da sequência anterior de criações e exclusões no mesmo laço while; como os testes foram feitos em sequência sem preencher os três espaços antes de testar a criação, o caminho do else ("Não tem mais espaço, delete um anúncio antes.") ficou sem verificação isolada.
 
 **3c. Decisão de ajuste (ao menos 1) com justificativa e fonte:**
-- **Decisão:** _…_
-- **Fonte:** _…_
+- **Decisão:** Adotei a validação prévia da existência do anúncio nas opções "3" e "4" usando a expressão booleana existe = (num == "1" and anuncio1 != "") or (num == "2" and anuncio2 != "") or (num == "3" and anuncio3 != ""), limpando num = "" quando existe == False, e passei a exigir confirmação explícita (!= "s") antes de apagar o anúncio.
+- **Fonte:** Curso Python #06 – Tipos Primitivos e Saída de Dados e Exercício Python #004 – Dissecando uma Variável, de Gustavo Guanabara (Curso em Vídeo), com apoio do ChatGPT como assistente de aprendizagem para reforçar os conceitos de variáveis, tipos primitivos e entrada/saída em Python.
 
-**Objeto de conhecimento mobilizado nesta decisão:** _…_
+**Objeto de conhecimento mobilizado nesta decisão:** Estruturas condicionais (if/elif/else), operadores lógicos (and, or), variáveis de controle e laço de repetição while.
 
 ### 🧩 CAMPO 04 — Interação com IA
 *AV Qualis — Grupo 2 | Sábado 21/11, 23h59 | OBRIGATÓRIO*
@@ -416,19 +416,20 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 **4b. Pergunta formulada (transcrita integralmente):**
 
-> _…_
+> 4b. Pergunta formulada (transcrita integralmente):
+Como posso organizar o controle de criação, alteração e exclusão de anúncios em variáveis separadas (anuncio1, anuncio2, anuncio3) usando if/elif/else e while sem que uma entrada inválida ou exclusão cancelada grave ou apague dados por engano?
 
 **4c. Resposta da IA (resumida em parágrafo):**
 
-> _…_
+> A IA sugeriu usar uma variável de controle para identificar qual anúncio será manipulado e limpá-la quando ocorrer validação inválida ou cancelamento, deixando a gravação final condicional ao fato de essa variável continuar válida; também comentou sobre checar campos vazios e confirmar antes de apagar, além de apontar limitações de escalabilidade ao manter variáveis individuais em vez de uma estrutura composta.
 
 **4d. O que aceitei — com referência ao objeto de conhecimento do componente:**
 
-> _…_
+> Aceitei a lógica de usar uma variável de controle (num) que só permanece preenchida quando as condições são atendidas e volta a "" quando há falha de validação (titulo == "" ou preco == ""), inexistência do anúncio ou cancelamento da exclusão (!= "s"), evitando alterações indevidas no bloco final. Isso se apoia nos objetos de conhecimento de variáveis, tipos primitivos (str, bool), operadores relacionais/lógicos (==, !=, and, or), estruturas condicionais (if/elif/else) e laços de repetição (while), reforçados nas aulas Curso Python #06 – Tipos Primitivos e Saída de Dados e Exercício Python #004 – Dissecando uma Variável (Gustavo Guanabara — Curso em Vídeo).
 
 **4e. O que questionei ou descartei — com argumento técnico ou fonte:**
 
-> _…_
+> Questionei e descartei sugestões de alterar a estrutura de dados do programa para coleções/estruturas mais avançadas neste momento, pois o recorte do projeto na disciplina trabalhava com variáveis simples, if/elif/else e while, e a prioridade era dominar o fluxo condicional, a verificação de estado de cada variável (anuncio1, anuncio2, anuncio3) e o tipo/conteúdo das entradas obtidas com input() antes de avançar para outras estruturas. Argumento técnico e fonte: manter o escopo restrito aos objetos de conhecimento estudados evita introduzir recursos não trabalhados no código e permite validar com precisão o comportamento das expressões booleanas e do controle de fluxo no laço while, com base nas aulas de Gustavo Guanabara (Curso Python #06 e Exercício Python #004) e na prática de testar cada caminho condicional no código.
 
 ## 🟠 CICLO 05 — 09/09 — Condicionais aninhadas e operadores lógicos
 
@@ -443,13 +444,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 05 — 09/09
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** Garantir que as validações e buscas de anúncios no Anuncify combinem múltiplas condições com clareza sem alterar ou apagar registros indevidamente.
+2. **O que implementei (commits / arquivos / links):** Ajustes na verificação de existência de anúncio e na validação de campos obrigatórios no código do CRUD (anuncio1, anuncio2, anuncio3 com if/elif/else e while). 
+3. **Objeto(s) de conhecimento mobilizado(s):** Condicionais aninhadas (if/elif/else), operadores lógicos (and, or, not), expressões booleanas e laço de repetição while.
+4. **Desvio ou erro encontrado + causa técnica:** Ao verificar se um anúncio existia antes de modificar ou deletar (opcao == "3" ou "4"), combinar o número escolhido com o estado do respectivo slot (!= "") exigiu atenção à precedência e ao agrupamento com parênteses em (num == "1" and anuncio1 != "") or (num == "2" and anuncio2 != "") or (num == "3" and anuncio3 != ""); sem agrupar corretamente cada par, a condição avaliaria combinações falsas entre número do anúncio e conteúdo das variáveis.
+5. **Decisão de ajuste + fonte:** Utilizei or entre as três verificações compostas por and para testar cada slot de forma independente e limpar num = "" quando existe == False, além de exigir confirmação != "s" antes de deletar — com base nas aulas Curso Python #06 – Tipos Primitivos e Saída de Dados e Exercício Python #004 – Dissecando uma Variável (Gustavo Guanabara — Curso em Vídeo) e no apoio do ChatGPT.
+6. **Feedback recebido e o que mudei:** Reforcei os testes de casos de borda (entrada num = "2" quando anuncio2 == "", título/preço vazios e resposta diferente de "s" na exclusão) para confirmar que num é zerado e o bloco final não grava dados indevidos.
+7. **Próximo passo:** Continuar praticando o uso de condições aninhadas (if/elif/else dentro de outras estruturas condicionais) e operadores lógicos (and, or, not) nas operações do CRUD (anuncio1, anuncio2, anuncio3), testando os caminhos internos de validação e cancelamento para garantir que cada decisão aninhada leve ao estado esperado dentro do laço while.
 
 ## 🟠 CICLO 06 — 30/09 — Devolutiva da P1 + repetição: `for`, `while`, `break`, `continue`
 
@@ -463,13 +464,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 06 — 30/09
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido (inclui devolutiva da P1) e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** Garantir o controlo correto das repetições e das condições de paragem no CRUD de anúncios (Anuncify) sem provocar laços infinitos, encerramentos indevidos ou perda de dados.
+2. **O que implementei (commits / arquivos / links):** Revisão do laço principal do menu (while opcao != "5") e das verificações de estado dos anúncios (anuncio1, anuncio2, anuncio3) no código do CRUD.
+3. **Objeto(s) de conhecimento mobilizado(s):** Estruturas de repetição (for, while), controlo de fluxo (break, continue), condições de paragem e variáveis de controlo (opcao, num).
+4. **Desvio ou erro encontrado + causa técnica:** Na execução do laço principal do menu (while), a utilização ou o posicionamento inadequado de instruções de interrupção/fluxo ou a atualização incorreta da condição de paragem pode encerrar o menu antes do previsto ou repetir a mesma condição sem avançar o estado; no meu fluxo com anuncio1, anuncio2 e anuncio3, o controlo baseia-se na condição do while e na limpeza da variável num (num = "") quando há falha ou cancelamento.
+5. **Decisão de ajuste + fonte:** Mantive o while opcao != "5" para o menu contínuo (uma vez que o número de interações do utilizador não é fixo à partida) e controlei a interrupção de operações inválidas ou canceladas via num = "" e condicionais, com base nas aulas Curso Python #06 – Tipos Primitivos e Saída de Dados e Exercício Python #004 – Dissecando uma Variável (Gustavo Guanabara — Curso em Vídeo) e no apoio do ChatGPT.
+6. **Feedback recebido (inclui devolutiva da P1) e o que mudei:** Neste ciclo, o professor Rondineli ainda não havia realizado a devolutiva formal da avaliação P1. Entretanto, durante as aulas, acompanhei as dúvidas apresentadas pelos colegas e as explicações fornecidas pelo professor, utilizando essas orientações gerais para compreender melhor os conteúdos trabalhados. Não recebi feedback individual específico sobre meu CRUD neste ciclo. A partir dessas orientações gerais e da revisão do laço while no Anuncify (anuncio1, anuncio2, anuncio3), reforcei a verificação da condição de saída e a limpeza da variável de controle num = "" quando ocorre entrada inválida ou cancelamento, evitando alterações ou exclusões indevidas.
+7. **Próximo passo:** Aprofundar o uso de laços de repetição (while e for) para validar entradas inválidas sem interromper o fluxo do menu e iniciar o estudo de listas em Python, visando substituir as variáveis individuais (anuncio1, anuncio2, anuncio3) por uma estrutura capaz de armazenar e percorrer múltiplos anúncios de forma dinâmica no CRUD.
 
 ## 🟠 CICLO 07 — 07/10 — Listas: armazenamento e iteração
 
@@ -483,13 +484,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 07 — 07/10
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** Substituir as variáveis fixas (anuncio1, anuncio2, anuncio3) por uma lista no CRUD Anuncify, permitindo armazenar múltiplos anúncios e percorrê-los de forma iterativa sem erros de índice ou alteração indevida durante a iteração.
+2. **O que implementei (commits / arquivos / links):** Estruturação da lista de anúncios no CRUD e laços de iteração para exibir, consultar, atualizar e remover registros.
+3. **Objeto(s) de conhecimento mobilizado(s):** Listas em Python, iteração (for e while), indexação, fatiamento e operações de lista (adicionar, remover, consultar/alterar elementos).
+4. **Desvio ou erro encontrado + causa técnica:** Ao percorrer a lista de anúncios para exibir ou remover itens, ocorreu risco de erro de índice fora do intervalo (IndexError) ou de pular/alterar elementos de forma inesperada quando a condição de parada ou a posição acessada não acompanhava o tamanho atual da lista. A causa técnica esteve na gestão da indexação e da condição de iteração em relação às alterações no tamanho da estrutura durante a execução.
+5. **Decisão de ajuste + fonte:** Passei a armazenar os anúncios em uma lista em vez de variáveis isoladas (anuncio1, anuncio2, anuncio3) para lidar com uma coleção ordenada de tamanho variável e percorrê-la com iteração, verificando os limites dos índices antes de acessar ou remover posições para evitar erros de índice fora do intervalo ou alterações indevidas durante o percurso. Fonte: Curso Python #16 - Tuplas, Curso Python #17 - Listas (Parte 1) e Curso Python #17 - Listas (Parte 2), de Gustavo Guanabara (Curso em Vídeo), com apoio do ChatGPT.
+6. **Feedback recebido e o que mudei:** A partir das orientações gerais em aula e da revisão prática do CRUD, reforcei a validação dos índices/posições antes de modificar ou excluir anúncios, evitando acessos inválidos ou remoções acidentais.
+7. **Próximo passo:** Avançar para o estudo de consulta/busca e organização de cada anúncio com estruturas mais estruturadas (como dicionários) no Ciclo 08, tratando falhas de busca por chave, tipo ou item inexistente.
 
 ## 🟠 CICLO 08 — 14/10 — Busca/consulta e introdução a dicionários e matrizes
 
@@ -504,13 +505,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 08 — 14/10
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** Estruturar cada anúncio do Anuncify como um dicionário (chave -> valor) para tornar a busca e a consulta de atributos mais claras, legíveis e independentes de posições fixas em listas de valores soltos.
+2. **O que implementei (commits / arquivos / links):** Refatorei a estrutura de representação dos anúncios no código do CRUD Anuncify para utilizar dicionários com chaves nomeadas para os atributos do anúncio (como título, descrição, preço, categoria, vendedor e localização), organizei a coleção/catálogo de registros e implementei/ajustei a rotina de busca/consulta para localizar anúncios pelos campos/chaves e tratar entradas ou correspondências inválidas sem quebrar o laço principal do menu (while). (Se você tiver o nome do arquivo .py ou o hash/mensagem do commit no repositório, coloque aqui também.)
+3. **Objeto(s) de conhecimento mobilizado(s):** Dicionários em Python (chave -> valor), acesso a valores por chave, listas/matrizes, iteração (for e while), estruturas condicionais (if/elif/else), validação/normalização de entradas e operações de busca/consulta.
+4. **Desvio ou erro encontrado + causa técnica:** Durante a busca/consulta de anúncios, ocorreram falhas quando a entrada digitada divergia no formato/tipo ou na grafia em relação aos dados armazenados (por exemplo, diferença de maiúsculas/minúsculas ou espaços extras na string buscada, comparação de valores de tipos diferentes como texto e número — ex.: "2" vs 2 — ou tentativa de consultar uma chave/valor inexistente). A causa técnica foi a comparação direta sem padronização prévia dos textos/tipos e a ausência de verificação explícita da existência da chave ou do registro antes de ler/exibir o resultado.
+5. **Decisão de ajuste + fonte:** Adotei dicionários (chave -> valor) para cada anúncio em vez de manter apenas listas de valores soltos porque cada anúncio possui atributos identificados por nome (como título, preço e categoria), o que evita confundir a ordem/posição de um campo com seu significado e facilita consultar ou validar propriedades específicas; na busca, passei a padronizar/validar o critério antes de comparar e a tratar casos sem correspondência com mensagem amigável. Fonte: aulas de Gustavo Guanabara (Curso Python #16 - Tuplas, Curso Python #17 - Listas (Parte 1) e Curso Python #17 - Listas (Parte 2) — Curso em Vídeo), Pense em Python (cap. 11) e apoio do ChatGPT.
+6. **Feedback recebido e o que mudei:** A partir das explicações em aula e dos testes práticos de consulta no CRUD, reforcei o tratamento de buscas sem retorno ou com formatação diferente para que o programa exiba o aviso adequado e retorne ao menu principal sem erro em tempo de execução.
+7. **Próximo passo:** Implementar a atualização e a exclusão de anúncios na estrutura com dicionários, mantendo a validação de entradas e a consistência dos dados no CRUD.
 
 ---
 
