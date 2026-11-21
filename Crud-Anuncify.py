@@ -1,61 +1,57 @@
-# CRUD de anúncios - Anuncify (só variáveis, if/elif/else e while)
-anuncio1 = anuncio2 = anuncio3 = ""  # cada anúncio é um texto só, vazio = espaço livre
-opcao = ""
+anuncios = []
 
-while opcao != "5":
-    print("\n--- Anuncify ---\n1. Criar anúncio\n2. Ver anúncios\n3. Modificar anúncio\n4. Deletar anúncio\n5. Sair")
-    opcao = input("Escolha: ")
-    num = ""
+while True:
+    print("\n=== ANUNCIFY ===")
+    print("1 - Cadastrar | 2 - Listar | 3 - Buscar | 4 - Sair")
+    op = input("Opção: ").strip()
 
-    if opcao == "1":
-        if anuncio1 == "":
-            num = "1"
-        elif anuncio2 == "":
-            num = "2"
-        elif anuncio3 == "":
-            num = "3"
+    if op == "1":
+        titulo = input("Título: ").strip()
+        preco_txt = input("Preço: ").strip().replace(",", ".")
+        if not titulo or not preco_txt:
+            print("Título e preço são obrigatórios.")
+            continue
+        try:
+            preco = float(preco_txt)
+        except ValueError:
+            print("Preço inválido.")
+            continue
+        if preco < 0:
+            print("Preço não pode ser negativo.")
+            continue
+        categoria = input("Categoria: ").strip() or "Geral"
+        anuncios.append({"titulo": titulo, "preco": preco, "categoria": categoria})
+        print("Anúncio cadastrado!")
+
+    elif op == "2":
+        if not anuncios:
+            print("Nenhum anúncio cadastrado.")
+            continue
+        for i, item in enumerate(anuncios):
+            print(f"[{i}] {item['titulo']} | R$ {item['preco']:.2f} | {item['categoria']}")
+
+    elif op == "3":
+        if not anuncios:
+            print("Nenhum anúncio para buscar.")
+            continue
+        termo = input("Buscar por título ou categoria: ").strip().lower()
+        if not termo:
+            print("Digite um termo para buscar.")
+            continue
+        encontrados = [
+            item for item in anuncios
+            if termo in str(item.get("titulo", "")).lower()
+            or termo in str(item.get("categoria", "")).lower()
+        ]
+        if not encontrados:
+            print("Nenhum anúncio encontrado.")
         else:
-            print("Não tem mais espaço, delete um anúncio antes.")
-    elif opcao == "3" or opcao == "4":
-        num = input("Qual anúncio (1, 2 ou 3)? ")
-        existe = (num == "1" and anuncio1 != "") or (num == "2" and anuncio2 != "") or (num == "3" and anuncio3 != "")
-        if existe == False:
-            print("Esse anúncio não existe.")
-            num = ""
-    elif opcao == "2":
-        if anuncio1 + anuncio2 + anuncio3 == "":
-            print("Não existem anúncios cadastrados.")
-        if anuncio1 != "":
-            print("1 -", anuncio1)
-        if anuncio2 != "":
-            print("2 -", anuncio2)
-        if anuncio3 != "":
-            print("3 -", anuncio3)
-    elif opcao != "5":
+            for item in encontrados:
+                print(f"- {item['titulo']} (R$ {item['preco']:.2f}) [{item['categoria']}]")
+
+    elif op == "4":
+        print("Encerrando...")
+        break
+
+    else:
         print("Opção inválida.")
-
-    if num != "":  # criar, modificar e deletar terminam aqui
-        texto = ""
-        if opcao == "4":
-            if input("Tem certeza que quer deletar? (s/n): ") != "s":
-                print("Exclusão cancelada.")
-                num = ""
-        else:
-            titulo = input("Título: ")
-            descricao = input("Descrição: ")
-            preco = input("Preço: ")
-            if titulo == "" or preco == "":
-                print("Título e preço são obrigatórios, o anúncio não foi salvo.")
-                num = ""
-            else:
-                texto = (titulo + " | " + descricao + " | R$ " + preco + " | " + input("Categoria: ")
-                         + " | " + input("Vendedor: ") + " | " + input("Localização: "))
-
-    if num == "1":  # só grava se não deu erro lá em cima (num continua preenchido)
-        anuncio1 = texto
-    elif num == "2":
-        anuncio2 = texto
-    elif num == "3":
-        anuncio3 = texto
-    if num != "":
-        print("Feito!")
