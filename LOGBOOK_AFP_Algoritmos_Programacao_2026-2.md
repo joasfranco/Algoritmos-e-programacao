@@ -114,11 +114,11 @@ Atualize a cada commit (troque ⬜ por ✅).
 | 2 | Checkpoint Conceitual | 21/11 | ⬜ | ⬜ |
 | 2 | Campo 03 — Execução e desvios | 21/11 | ✅ | ✅ |
 | 2 | Campo 04 — Interação com IA | 21/11 | ✅ | ✅ |
-| 3 | Registros dos Ciclos 09, 10, 11 e 12 | 26/11 | ⬜ | ⬜ |
-| 3 | Campo 05 — Revisão por pares nº 1 e nº 2 | 26/11 | ⬜ | ⬜ |
-| 3 | Campo 06 — Próximos passos | 26/11 | ⬜ | ⬜ |
-| 3 | Campo 07 — Evolução conceitual | 26/11 | ⬜ | ⬜ |
-| 🏁 | Defesa Técnica | 18/11 | ⬜ | — |
+| 3 | Registros dos Ciclos 09, 10, 11 e 12 | 26/11 | ✅ | ✅ |
+| 3 | Campo 05 — Revisão por pares nº 1 e nº 2 | 26/11 | ✅ | ✅ |
+| 3 | Campo 06 — Próximos passos | 26/11 | ✅ | ✅ |
+| 3 | Campo 07 — Evolução conceitual | 26/11 | ✅ | ✅ |
+| 🏁 | Defesa Técnica | 18/11 | ✅ | — |
 
 ---
 
@@ -312,10 +312,10 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 **Checklist do Grupo 2**
 - [ ] Checkpoint Conceitual feito conforme orientação do professor (20 min, sem consulta)
-- [ ] Campo 03: 2 achados com objeto, 1 desvio com causa técnica, 1 decisão com fonte
-- [ ] Campo 04: ferramenta, pergunta íntegra, resumo, o que aceitei e o que questionei
-- [ ] Registros dos Ciclos 05, 06, 07 e 08 com os 7 itens (devolutiva da P1 no ciclo 06)
-- [ ] Commits no GitHub e painel atualizado
+- [☑] Campo 03: 2 achados com objeto, 1 desvio com causa técnica, 1 decisão com fonte
+- [☑ ] Campo 04: ferramenta, pergunta íntegra, resumo, o que aceitei e o que questionei
+- [☑ ] Registros dos Ciclos 05, 06, 07 e 08 com os 7 itens (devolutiva da P1 no ciclo 06)
+- [☑ ] Commits no GitHub e painel atualizado
 
 ## 🟠 CICLO 03 (campos) — 26/08 — Checkpoint, Campo 03 e Campo 04
 
@@ -522,12 +522,12 @@ Como posso organizar o controle de criação, alteração e exclusão de anúnci
 > ⚠️ O prazo vem **um dia depois da P2 (25/11)**. Os Campos 06 e 07 dependem de todo o Logbook: deixe-os para o final, mas **adiante o rascunho do 6c e do 7a/7b antes da Defesa (18/11)**.
 
 **Checklist do Grupo 3**
-- [ ] Registros dos Ciclos 09, 10, 11 e 12 com os 7 itens
-- [ ] Campo 05: duas revisões (Ciclos 09 e 12), blocos 5a a 5e
-- [ ] Campo 06: decisão autônoma, lacuna com plano, pergunta da banca com 5 linhas ou mais
-- [ ] Campo 07: 7a a 7e, com 3 objetos, 2 equívocos corrigidos e transferência
-- [ ] Coerência entre Campo 01 e Campo 07
-- [ ] Painel de acompanhamento completo
+- [☑] Registros dos Ciclos 09, 10, 11 e 12 com os 7 itens
+- [☑] Campo 05: duas revisões (Ciclos 09 e 12), blocos 5a a 5e
+- [☑] Campo 06: decisão autônoma, lacuna com plano, pergunta da banca com 5 linhas ou mais
+- [☑] Campo 07: 7a a 7e, com 3 objetos, 2 equívocos corrigidos e transferência
+- [☑] Coerência entre Campo 01 e Campo 07
+- [☑] Painel de acompanhamento completo
 
 ## 🔵 CICLO 09 — 21/10 — Atualização e exclusão: CRUD completo
 
@@ -567,7 +567,7 @@ Como posso organizar o controle de criação, alteração e exclusão de anúnci
 | | |
 |---|---|
 | **Autor do CRUD revisado** | Enzo figueiredo |
-| **Repositório revisado** | [](https://github.com/enzofigueiredo09/Algoritmos-e-Programa-o/blob/main/1%C2%B0%20Prazo%20do%20CRUD%20(1511)) |
+| **Repositório revisado** | (https://github.com/enzofigueiredo09/Algoritmos-e-Programa-o/blob/main/1%C2%B0%20Prazo%20do%20CRUD%20(1511) |
 | **Revisor** | Joás franco rodrigues |
 | **Unidade curricular / Semestre** | Algoritmos e Programação · 2026.2 |
 | **Ciclo / data** | _Ciclo 09 · 26/11_ |
@@ -703,7 +703,7 @@ Como posso organizar o controle de criação, alteração e exclusão de anúnci
 | | |
 |---|---|
 | **Autor do CRUD revisado** | Enzo figueiredo |
-| **Repositório revisado** | _[link](https://github.com/enzofigueiredo09/Algoritmos-e-Programa-o/blob/main/1%C2%B0%20Prazo%20do%20CRUD%20(1511)_ |
+| **Repositório revisado** | (https://github.com/enzofigueiredo09/Algoritmos-e-Programa-o/blob/main/1%C2%B0%20Prazo%20do%20CRUD%20(1511) |
 | **Revisor** | Joás franco rodrigues |
 | **Ciclo / data** | _Ciclo 12 · 26/11_ |
 
