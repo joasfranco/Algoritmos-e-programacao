@@ -548,14 +548,13 @@ Como posso organizar o controle de criação, alteração e exclusão de anúnci
 </details>
 
 #### Registro do Ciclo 09 — 21/10
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
-
+1. **Desafio do ciclo (em 1 frase):** Concluir o CRUD do Anuncify implementando a atualização e a exclusão de anúncios na estrutura de lista de dicionários sem quebrar índices nem deixar registros inconsistentes.
+2. **O que implementei (commits / arquivos / links):** Operações de atualização (Update) e exclusão (Delete) de anúncios integradas ao fluxo do CRUD no repositório do Anuncify (com validação de existência do registro antes de alterar ou remover). Repositório:https://github.com/joasfranco/Algoritmos-e-programacao/blob/main/Crud-Anuncify.py
+3. **Objeto(s) de conhecimento mobilizado(s):** Listas, índices, atribuição de valores, remoção de elementos(como del ou filtragem/remoção por condição), busca por ID e estruturas condicionais if/else para localizar registros e confirmar exclusão.
+4. **Desvio ou erro encontrado + causa técnica:** Ocorreu falha ao tentar atualizar/excluir um anúncio inexistente ou ao remover itens durante uma iteração sobre a lista. A causa técnica foi tentar acessar/remover um elemento sem validar previamente sua existência ou alterar o tamanho da lista enquanto o laço avançava por índice, deslocando posições e pulando ou estourando limites.
+5. **Decisão de ajuste + fonte:** Passei a validar a existência do anúncio antes de aplicar alterações ou exclusões e a evitar remoção direta que altere o índice durante a varredura do laço, apoiando-me nas aulas de Gustavo Guanabara (Curso em Vídeo — Python) e no apoio do ChatGPT.
+6. **Feedback recebido e o que mudei:** Não recebi feedbacks neste ciclo; a partir da revisão prática do CRUD com lista e dicionários, reforcei a validação de existência antes de alterar ou remover registros e evitei mutar a lista durante laços de percurso, exibindo mensagens claras para itens inexistentes ou exclusões não confirmadas.
+7. **Próximo passo:** Planejava evoluir o CRUD com o uso de listas e laços de repetição para manipular registros de forma mais flexível, evitando repetição de trechos repetitivos e reduzindo falhas na atualização e exclusão. Embora o fluxo básico já estivesse funcional, buscava estruturar melhor o código e as validações para tornar as operações mais seguras, limpas e fáceis de manter nas etapas seguintes.
 ### 🧩 CAMPO 05 — Registro de Revisão por Pares
 *Adaptação do **Logbook do Time** (Apêndice C) para o CRUD individual. Documento atualizado pelo **revisor**. Cada decisão técnica relevante deve ter associado o objeto de conhecimento correspondente.*
 
@@ -567,47 +566,47 @@ Como posso organizar o controle de criação, alteração e exclusão de anúnci
 
 | | |
 |---|---|
-| **Autor do CRUD revisado** | _nome_ |
-| **Repositório revisado** | _link_ |
-| **Revisor** | _seu nome_ |
+| **Autor do CRUD revisado** | Enzo figueiredo |
+| **Repositório revisado** | [](https://github.com/enzofigueiredo09/Algoritmos-e-Programa-o/blob/main/1%C2%B0%20Prazo%20do%20CRUD%20(1511)) |
+| **Revisor** | Joás franco rodrigues |
 | **Unidade curricular / Semestre** | Algoritmos e Programação · 2026.2 |
-| **Ciclo / data** | _Ciclo 09 · 21/10_ |
+| **Ciclo / data** | _Ciclo 09 · 26/11_ |
 
 **5a. AVANÇO DO PROCESSO DE REVISÃO — análise técnica de cada etapa:**
 
 | ETAPA DO PROCESSO | RESPONSÁVEL | PRAZO | STATUS | DESVIO / JUSTIFICATIVA |
 |---|---|---|---|---|
-| 1. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 2. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 3. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 4. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 5. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
+| 1. Inspeção do código-fonte e arquitetura de dados | Revisor / Autor | _26/11_ | ☑ Concluída ☐ Em andamento ☐ Com desvio | Estrutura modularizada em funções com lista de dicionários (ingressos) e matriz (parques_horarios); ausência de requisitos.md.|
+| 2. Execução do fluxo CRUD e verificação de entradas | Revisor / Autor | _26/11_ | ☑ Concluída ☐ Em andamento ☐ Com desvio | Operações básicas operacionais, mas int(input(...)) não trata exceção ValueError em entradas não numéricas. |
+| 3. Teste de limites, índices e mutação de lista | Revisor / Autor | _26/11_ | ☑ Concluída ☐ Em andamento ☐ Com desvio | Verificação de intervalo (1 <= numero <= len(lista_ingressos)) funcional; remoção via .pop() ocorre sem confirmação explícita. |
+| 4. Diagnóstico técnico e rastreabilidade das decisões | Revisor / Autor | _26/11_ | ☑ Concluída ☐ Em andamento ☐ Com desvio |Falhas mapeadas por objeto de conhecimento, justificativa técnica e fonte. |
+| 5. Devolutiva técnica estruturada ao autor | Revisor / Autor | _26/11_ | ☑ Concluída ☐ Em andamento ☐ Com desvio | Feedback objetivo entregue com reprodução do erro e recomendações de robustez. |
 
 **5b. ANÁLISE DE INSUMOS E CRITÉRIOS DE QUALIDADE:**
 
 | RECURSO | QTDE PLANEJADA | QTDE UTILIZADA | VARIAÇÃO | JUSTIFICATIVA TÉCNICA |
 |---|---|---|---|---|
-| _…_ | _…_ | _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ | _…_ | _…_ |
+| Código-fonte do CRUD (crud.py) | 1 | 1 | 0 | Analisado quanto à modularização, estruturas de dados, indexação e controle de fluxo. |
+| Casos de teste (cenários válidos, limites e inválidos) | 6 | 6 | 0 | Avaliaram criação, leitura, atualização por índice, exclusão via .pop(), consulta matricial e entradas inválidas. |
+| Especificação de requisitos (requisitos.md) | 1 | 0 | -1 | Arquivo ausente; os requisitos funcionais foram inferidos a partir do menu e das rotinas implementadas. |
 
 **5c. CONTROLE DE QUALIDADE:**
-- **Critério ou norma técnica:** _…_
-- **A solução atende?** ☐ Sim ☐ Parcialmente ☐ Não
+- **Critério ou norma técnica:**validação de tipos e limites de índice, consistência de estruturas compostas (lista de dicionários e lista aninhada/matriz) e tratamento de entradas inválidas.
+- **A solução atende?** ☐ Sim ☑ Parcialmente ☐ Não
 
 **5d. GESTÃO DE RISCOS:**
-- **Risco:** _…_
-- **Estratégia de mitigação:** _…_
+- **Risco:** Exceção não tratada (ValueError) na conversão int(input(...)) interrompendo o laço while True da função main(), além de deleção destrutiva sem confirmação do usuário.
+- **Estratégia de mitigação:** Executar testes de entrada inválidas sem alterar o código original e propor validação prévia de string numérica / confirmação condicional antes de .pop().
 
 **5e. RASTREABILIDADE DAS DECISÕES TÉCNICAS — COM VÍNCULO AO CONTEÚDO:**
 
 | DATA | DECISÃO TÉCNICA | RESP. | OBJETO DE CONHECIMENTO MOBILIZADO | FUNDAMENTAÇÃO / REFERÊNCIA |
 |---|---|---|---|---|
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
+| _26/11/26_ | Validar se a entrada é numérica antes de invocar int() para prevenir ValueError em tempo de execução. | Revisor | Tipos primitivos, conversão de tipos e validação de entrada | Documentação oficial do Python — Built-in Functions (int(), input()) e Tratamento de Erros |
+| _DD/MM/AA_ | Condicionar lista_ingressos.pop(numero - 1) a confirmação explícita do usuário antes da mutação da lista. | Revisor | Estruturas condicionais (if/else) e mutabilidade de listas | Pense em Python (Downey) e aulas de Algoritmos e Programação (2026.2) |
+| _DD/MM/AA_ | Normalizar strings de entrada (.strip().title()) para reduzir inconsistências em chaves/valores de dicionários. | Revisor | Manipulação de strings e dicionários | Documentação oficial do Python — String Methods |
+| _DD/MM/AA_ | Adotar as operações do menu e do CRUD como critério funcional na ausência de requisitos.md. | Revisor | Verificação funcional e engenharia de requisitos | Protocolo / Logbook AFP 2026.2 — Campo 05 |
+| _DD/MM/AA_ | Preservar a representação em lista de dicionários e matriz de horários pela adequação ao escopo atual. | Revisor | Listas, matrizes (listas aninhadas) e dicionários | Aulas de Algoritmos e Programação (2026.2) |
 
 > **IMPORTANTE:** Decisão registrada sem objeto de conhecimento associado e sem referência é considerada **não rastreável** e não conta para a avaliação formativa. O vínculo entre processo e conteúdo é obrigatório em todas as decisões relevantes.
 
@@ -623,13 +622,13 @@ Como posso organizar o controle de criação, alteração e exclusão de anúnci
 </details>
 
 #### Registro do Ciclo 10 — 28/10
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** Modularizar o CRUD do Anuncify em funções com responsabilidades bem definidas, reduzindo repetição e controlando escopo, parâmetros, retornos e feedback da revisão por pares.
+2. **O que implementei (commits / arquivos / links):** Refatoração do CRUD para funções dedicadas (como cadastro, busca, listagem, atualização, exclusão e menu), substituindo blocos repetitivos no fluxo principal e ajustando a passagem de parâmetros e retornos.
+3. **Objeto(s) de conhecimento mobilizado(s):** Modularização e definição de funções (def), escopo de variáveis (local vs. global), passagem de parâmetros e argumentos, retorno de valores (return), listas, dicionários e controle de fluxo.
+4. **Desvio ou erro encontrado + causa técnica:** Ocorreram problemas típicos de modularização, como tentar usar variável local fora do seu escopo, chamar função sem return esperando valor ou passar parâmetros em ordem trocada, alterando valores no campo errado ou deixando o chamador sem o resultado esperado.
+5. **Decisão de ajuste + fonte:**Separei cada operação em função própria — menu para navegação, cadastro para criar registros, busca para localizar itens, listagem para exibir, atualização para alterar campos e exclusão para remover — definindo parâmetros explícitos e retornos claros, com base nas aulas de Gustavo Guanabara (Curso em Vídeo — Python) e no apoio do ChatGPT.
+6. **Feedback recebido e o que mudei:** A partir da peer review do colega, reforcei a validação de entradas/índices dentro das funções e deixei o retorno e o estado da lista mais previsíveis, evitando alterações indevidas ou falhas silenciosas.
+7. **Próximo passo:** Avançar para o estudo de recursividade no Ciclo 11, avaliando onde o problema pode ser decomposto com caso base e passo recursivo sem gerar loop infinito.
 
 ## 🔵 CICLO 11 — 04/11 — Recursividade
 
@@ -645,35 +644,35 @@ Como posso organizar o controle de criação, alteração e exclusão de anúnci
 </details>
 
 #### Registro do Ciclo 11 — 04/11
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** Compreender e aplicar recursividade (caso base, chamada recursiva e pilha de execução) em problemas divisíveis em subproblemas menores sem gerar loop infinito ou RecursionError.
+2. **O que implementei (commits / arquivos / links):** Exercícios e testes práticos de funções recursivas e análise de casos aplicáveis no escopo do meu Crud.
+3. **Objeto(s) de conhecimento mobilizado(s):** Recursividade, caso base, passo recursivo, pilha de chamadas (call stack), retorno de valores (return) e estruturas condicionais (if/else).
+4. **Desvio ou erro encontrado + causa técnica:** Ocorreram casos de recursão sem caso base adequado ou com passo recursivo que não converge para o caso base, esgotando a pilha de chamadas e provocando RecursionError, além de esquecer o return na chamada recursiva e perder o resultado empilhado.
+5. **Decisão de ajuste + fonte:** Definir sempre um caso base explícito e garantir que cada chamada recursiva avance em direção a ele retornando o valor acumulado, apoiando-me em Pense em Python (Downey), na documentação oficial do Python e nas aulas de Algoritmos e Programação.
+6. **Feedback recebido e o que mudei:** A partir das verificações práticas e orientações de aula, passei a preferir laços iterativos para operações lineares simples do CRUD (como menus e varreduras diretas) e reservar recursividade para estruturas ou problemas naturalmente hierárquicos/divisíveis, com caso base bem delimitado.
+7. **Próximo passo:** Refatorar e elevar a qualidade do código no Ciclo 12 — eliminando duplicações, melhorando nomes e organização das funções, tratando entradas inválidas e revisando a robustez do CRUD frente a casos de teste e dados defeituosos.
 
 ### 🧩 CAMPO 06 — Próximos passos para a defesa
 *AV Qualis — Grupo 3 | Individual | Quinta 26/11, 23h59*
 
 **6a. Decisão técnica que defendo com plena autonomia — o que aprendi que é exclusivamente meu e não consigo transferir para nenhum colega:**
 
-> _…_
+> A escolha de implementar o CRUD do Anuncify usando apenas recursos nativos do Python, sem bibliotecas externas e sem listas estruturadas inicialmente, organizando os anúncios em variáveis explícitas e controlando o limite de 3 vagas, a existência dos registros e a limpeza das variáveis na exclusão.
 
 **6b. Lacuna técnica e plano de ação para saná-la:**
 
-- **Lacuna:** _…_
-- **Plano de ação (passos e datas):** _…_
+- **Lacuna:** Armazenamento volátil apenas em memória (sem persistência em arquivo/banco), limite fixo de 3 anúncios e ausência de listas estruturadas na versão apresentada na defesa, além da necessidade de tornar o tratamento de entradas inválidas ainda mais robusto._
+- **Plano de ação (passos e datas):** Até 18/11: Revisar o fluxo de criação, consulta, alteração e exclusão no Anuncify e ensaiar a defesa de cada decisão técnica e limitação do projeto. Até 26/11: Consolidar o registro no Logbook AFP com o Campo 06 preenchido, registrando os próximos passos de evolução do sistema (como migração para estruturas mais escaláveis e persistência de dados).
 
 **6c. Pergunta que a banca pode fazer — com resposta fundamentada (mínimo 5 linhas):**
 
-- **Pergunta:** _…_
+- **Pergunta:** Como você declarou e utilizou as variáveis no Anuncify para gerenciar o ciclo de vida dos anúncios (criar, consultar, modificar e excluir) sem usar listas estruturadas ou bibliotecas externas, e quais limitações essa escolha traz?
 - **Resposta:**
 
-> _…_
+> No Anuncify, as variáveis foram declaradas diretamente em Python — por tipagem dinâmica, no momento da atribuição — para representar tanto os dados de cada anúncio (como título, descrição, preço, categoria, vendedor e localização) quanto o controle do estado e das vagas disponíveis. Na criação (Create), os valores recebidos via entrada são atribuídos às variáveis após checar o limite máximo de 3 anúncios; na consulta (Read), os registros ativos são lidos para exibição ou sinalizam base vazia; na alteração (Update), a existência do anúncio é verificada antes de sobrescrever seus campos; e na exclusão (Delete), o registro ativo é localizado e suas variáveis são limpas para liberar espaço a um novo cadastro. Essa abordagem permitiu focar na lógica, nas condicionais e no controle de fluxo usando apenas recursos nativos da linguagem, mas impõe restrições claras: limite de 3 anúncios, ausência de listas estruturadas e dados mantidos apenas em memória (sem persistência).
 
-**Objeto de conhecimento mobilizado:** _…_
-**Fonte:** _…_
+**Objeto de conhecimento mobilizado:** Variáveis, tipos de dados, atribuição, estruturas condicionais, estruturas de repetição e controle de fluxo em Python.
+**Fonte:** DOWNEY, Allen B. Pense em Python: Pense como um cientista da computação. Capítulo 10 — Listas; explicações do professor Rondineli Seba Salomão durante a aula sobre buscas.
 
 ## 🔵 CICLO 12 — 11/11 — Refatoração e qualidade de código
 
@@ -691,58 +690,58 @@ Como posso organizar o controle de criação, alteração e exclusão de anúnci
 </details>
 
 #### Registro do Ciclo 12 — 11/11
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** Refatorar o código do Anuncify e revisar a qualidade de um CRUD par para eliminar duplicações, melhorar nomes e legibilidade, reduzir funções extensas e tornar as validações mais resistentes a entradas inválidas.
+2. **O que implementei (commits / arquivos / links):** Refatoração de trechos duplicados, padronização de nomes de variáveis e funções, limpeza de comentários redundantes e reforço das verificações de fluxo no repositório do Anuncify (docs(logbook): ciclo 12 e revisao 2 / ajustes no código do CRUD).
+3. **Objeto(s) de conhecimento mobilizado(s):** Refatoração de código, modularização, legibilidade e nomenclatura, validação de entrada, estruturas condicionais (if/elif/else), laços de repetição, listas e dicionários.
+4. **Desvio ou erro encontrado + causa técnica:** Havia trechos repetidos para exibir/validar anúncios, nomes genéricos ou pouco descritivos, comentários repetindo o óbvio e lógica de validação dispersa; a causa técnica foi o acréscimo incremental de funcionalidades nos ciclos anteriores sem consolidar padrões de entrada e exibição.
+5. **Decisão de ajuste + fonte:** Extraí validações/exibições repetidas para pontos únicos, renomeei identificadores conforme o domínio do Anuncify, removi comentários desnecessários e simplifiquei condições aninhadas, apoiando-me nas aulas de Algoritmos e Programação (Prof. Rondineli Seba Salomão, 2026.2), em Pense em Python (Downey) e na documentação oficial do Python.
+6. **Feedback recebido e o que mudei:** A partir da revisão crítica do próprio código e da revisão por pares, tornei as mensagens de erro mais objetivas, evitei duplicação de checagens de existência/limite e mantive o controle de fluxo previsível mesmo com entradas malformadas.
+7. **Próximo passo:** Consolidar o fechamento do Grupo 3 no Logbook AFP (Campos 05, 06 e 07), garantindo coerência entre o Campo 01, a Defesa Técnica e o Campo 07.
 
 ### 🧩 CAMPO 05 — Registro de Revisão por Pares (revisão nº 2)
 
 | | |
 |---|---|
-| **Autor do CRUD revisado** | _nome_ |
-| **Repositório revisado** | _link_ |
-| **Revisor** | _seu nome_ |
-| **Ciclo / data** | _Ciclo 12 · 11/11_ |
+| **Autor do CRUD revisado** | Enzo figueiredo |
+| **Repositório revisado** | _[link](https://github.com/enzofigueiredo09/Algoritmos-e-Programa-o/blob/main/1%C2%B0%20Prazo%20do%20CRUD%20(1511)_ |
+| **Revisor** | Joás franco rodrigues |
+| **Ciclo / data** | _Ciclo 12 · 26/11_ |
 
 **5a. AVANÇO DO PROCESSO DE REVISÃO:**
 
 | ETAPA DO PROCESSO | RESPONSÁVEL | PRAZO | STATUS | DESVIO / JUSTIFICATIVA |
 |---|---|---|---|---|
-| 1. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 2. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 3. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 4. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 5. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
+| 1. Inspeção estática (duplicação, nomes, tamanho de funções e comentários) | Revisor | _26/11_ | ☑ Concluída ☐ Em andamento ☐ Com desvio | mudar_parque e cancelar_ingresso repetem a listagem formatada; funções curtas e legíveis, com comentários pontuais. |
+| 2. Teste de casos mínimos, máximos e de borda | Revisor | _26/11_ | ☑ Concluída ☐ Em andamento ☐ Com desvio | Lista vazia (len == 0) e índices 1 e len(lista) tratados; ausência de checagem de string vazia ou espaços em nome/parque. |
+| 3.Teste com entradas inválidas e lote de dados com defeito | Revisor | _26/11_ | ☑ Concluída ☐ Em andamento ☐ Com desvio | Entradas não numéricas em int(input(...)) geram ValueError; campos em branco ou variações de caixa (case) entram sem normalização. |
+| 4. Consolidação dos achados e rastreabilidade técnica| Revisor | _26/11_ | ☑ Concluída ☐ Em andamento ☐ Com desvio | Falhas de qualidade e robustez vinculadas a objetos de conhecimento e referências. |
+| 5. Devolução de feedback focado em qualidade | Revisor | _26/11_ | ☑ Concluída ☐ Em andamento ☐ Com desvio | Feedback objetivo entregue com cenários de falha, reprodução e refatorações recomendadas. |
 
 **5b. ANÁLISE DE INSUMOS E CRITÉRIOS DE QUALIDADE:**
 
 | RECURSO | QTDE PLANEJADA | QTDE UTILIZADA | VARIAÇÃO | JUSTIFICATIVA TÉCNICA |
 |---|---|---|---|---|
-| _…_ | _…_ | _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ | _…_ | _…_ |
+| Código-fonte do Crud (crud.py) | 1 | 1 | 0 | Revisado quanto a duplicação, clareza de nomes, modularidade e tratamento de erros. |
+| Casos de teste (mínimos, máximos, inválidos e vazios) | 8 | 8 | 0 | Cobriram lista vazia, primeiro/último elemento, índice inválido, texto em int() e inputs em branco. |
+| Lote de dados com defeito | 1 | 1 | 0 | Aplicado para verificar resistência a registros vazios, duplicidade de texto e tipos inesperados. |
 
 **5c. CONTROLE DE QUALIDADE:**
-- **Critério ou norma técnica:** _…_
-- **A solução atende?** ☐ Sim ☐ Parcialmente ☐ Não
+- **Critério ou norma técnica:** Resistência do CRUD a entradas inválidas/vazias e lote defeituoso, ausência de lógica duplicada crítica, clareza de nomes/funções e integridade de lista de dicionários e matriz.
+- **A solução atende?** ☐ Sim ☑ Parcialmente ☐ Não
 
 **5d. GESTÃO DE RISCOS:**
-- **Risco:** _…_
-- **Estratégia de mitigação:** _…_
+- **Risco:** Quebra por ValueError em entradas não numéricas, cadastro de campos vazios/espaços ou remoção acidental sem confirmação em lotes defeituosos.
+- **Estratégia de mitigação:** Executar testes de estresse/defeito sem alterar o código original e propor validação de entrada (.strip(), checagem numérica ou try/except ValueError) e extração de helper para listagem.
 
 **5e. RASTREABILIDADE DAS DECISÕES TÉCNICAS — COM VÍNCULO AO CONTEÚDO:**
 
 | DATA | DECISÃO TÉCNICA | RESP. | OBJETO DE CONHECIMENTO MOBILIZADO | FUNDAMENTAÇÃO / REFERÊNCIA |
 |---|---|---|---|---|
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
+| _26/11/26_ | Rejeitar strings vazias ou só com espaços (.strip()) antes de criar ou alterar ingressos. | Revisor | Manipulação de strings e validação de entrada | Documentação oficial do Python — String Methods (str.strip()) |
+| _26/11/26_ | Proteger conversões int(input(...)) contra ValueError antes de acessar índices da lista. | Revisor | Conversão de tipos, condicionais e tratamento de exceções | Documentação oficial do Python — Errors and Exceptions e Built-in Functions |
+| _26/11/26_ | Extrair a exibição numerada de ingressos para reduzir duplicação entre mudar_parque e cancelar_ingresso. | Revisor | Modularização, funções e refatoração | Pense em Python (Downey) e aulas de Algoritmos e Programação (2026.2) |
+| _26/11/26_ | Exigir confirmação antes de lista_ingressos.pop(numero - 1) em operações destrutivas. | Revisor | Estruturas condicionais (if/else) e mutação de listas | Aulas de Algoritmos e Programação (Prof. Rondineli Seba Salomão, 2026.2) |
+| _26/11/26_ | Avaliar o CRUD frente a casos de borda e lote defeituoso como critério de qualidade do Ciclo 12. | Revisor | Testes de software, casos de borda e qualidade de código |Orientações do Logbook AFP 2026.2 — Ciclo 12 e Campo 05 |
 
 ### 🧩 CAMPO 07 — Evolução conceitual
 *AV Qualis — Grupo 3 | Individual | Quinta 26/11, 23h59*
@@ -751,30 +750,29 @@ Como posso organizar o controle de criação, alteração e exclusão de anúnci
 
 **7a. O que eu pensava no início do ciclo (com base no Campo 01 — registrar a hipótese inicial e os objetos de conhecimento que achava conhecer):**
 
-> _…_
+> No início, eu imaginava resolver o CRUD de forma direta, apoiando-me na noção intuitiva de variáveis, condições e repetições que já conhecia por cima, sem antecipar com clareza os efeitos colaterais de tipos de dados (como o retorno em string de input()), limites de estrutura, mutação de coleções, escopo em funções e casos de borda. Achava que fazer "funcionar no cenário normal" já bastava para dar o problema por resolvido.
 
 **7b. O que aprendi — conceitos, princípios ou relações técnicas que não dominava no início e que agora consigo explicar com precisão (mínimo 3 objetos de conhecimento):**
 
 | OBJETO DE CONHECIMENTO | O QUE EU NÃO DOMINAVA | O QUE APRENDI E CONSIGO DEMONSTRAR | EVIDÊNCIA (campo do Logbook onde aparece) |
 |---|---|---|---|
-| _…_ | _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ | _…_ |
+| Variáveis, tipos, conversão e validação de entrada | Achava que valores lidos e comparados se comportavam de modo óbvio, sem tratar strings vazias ou falhas em int(). | Sei validar entradas antes da conversão/uso, evitando erros de tipo e mantendo o fluxo estável em entradas inválidas. | Campo 01, Campo 03, Ciclos 09 e 12, Defesa Técnica |
+| Estruturas condicionais, operadores lógicos e laços | Misturava condições sem cobrir bem casos de borda ou alterações de tamanho/estado durante iteração. | Sei estruturar if/elif/else, and/or/not e laços com condições de guarda e limites explícitos. | Ciclos 05, 09 e 11, Defesa Técnica |
+| Listas, dicionários, modularização e refatoração | Não dominava a organização limpa em estruturas compostas e funções com escopo, parâmetros e retornos claros, nem a refatoração para eliminar duplicações. | Sei estruturar dados em coleções, dividir responsabilidades em funções e refatorar código mantendo clareza e rastreabilidade. | Ciclos 09, 10 e 12, Campo 05, Defesa Técnica |
 
 **7c. Conceitos que precisei corrigir ao longo do ciclo — onde eu estava equivocado e o que o corrigiu (Fechamento Teórico, pesquisa, Peer Review, arguição):**
 
-1. **Equívoco:** _…_ — **Correção:** _…_
-   **O que corrigiu:** _…_
-2. **Equívoco:** _…_ — **Correção:** _…_
-   **O que corrigiu:** _…_
-
+1. **Equívoco:** Achar que um fluxo CRUD básico funcionando no caminho feliz já cobre cenários de borda, entradas inválidas ou efeitos de alterar/remover registros. — **Correção:** Passar a validar pré-condições, limites e estados antes de alterar ou remover dados.
+   **O que corrigiu:** Prática nos ciclos do CRUD, testes de casos inválidos, Peer Review (Campo 05) e orientações em aula/arguição.
+2. **Equívoco:** Pensar que refatorar ou dividir em funções é apenas "enfeitar" ou mexer no código depois de pronto, sem vínculo com escopo, responsabilidade e qualidade. — **Correção:** Tratar modularização e refatoração como decisões técnicas guiadas por clareza, redução de duplicação, escopo/parâmetros e fontes verificáveis.
+   **O que corrigiu:** Ciclos 10 e 12, pesquisa em Pense em Python / documentação oficial e revisão por pares.
 **7d. Transferência — como este aprendizado se aplica a um contexto diferente do problema trabalhado (ao menos 1 exemplo concreto da área de formação):**
 
-> _…_
+> Em Engenharia de Software, ao desenvolver um script de automação ou API/serviço de cadastro de chamados ou ativos de TI, os mesmos fundamentos se aplicam: validar e normalizar dados recebidos externamente antes de persistir, verificar existência e limites antes de atualizar/excluir, evitar mutar coleções enquanto se itera sobre elas e separar responsabilidades em funções pequenas e testáveis.
 
 **7e. Avaliação honesta do próprio percurso — o que ainda não domino e preciso aprofundar após este ciclo:**
 
-> _…_
+> Ainda não domino com profundidade o tratamento sistemático de exceções (try/except) em múltiplas camadas, a persistência durável de dados fora da memória (arquivos/bancos) e a escrita de suítes automatizadas de testes; pretendo aprofundar esses pontos na sequência do curso aplicando-os em projetos maiores e na evolução pós-defesa.
 
 ---
 
@@ -813,8 +811,8 @@ Como posso organizar o controle de criação, alteração e exclusão de anúnci
 
 | | |
 |---|---|
-| **Nome** | _…_ |
-| **Curso / Time / Função** | _…_ |
+| **Nome** | _Joás franco rodrigues_ |
+| **Curso / Time / Função** | _Engenharia de software_ |
 
 <details>
 <summary>🔒 Uso do professor — rubrica completa</summary>
@@ -840,10 +838,10 @@ Como posso organizar o controle de criação, alteração e exclusão de anúnci
 </details>
 
 ### Registro do Encerramento — 18/11
-1. **O que apresentei/defendi (em 1 frase):** _…_
-2. **Objeto(s) de conhecimento que a banca mais explorou:** _…_
-3. **Pergunta que mais me desafiou e como respondi:** _…_
-4. **O que levo deste semestre para o próximo módulo:** _…_
+1. **O que apresentei/defendi (em 1 frase):** Apresentei e defendi o CRUD do Anuncify em Python, explicando a declaração e o uso de variáveis para os atributos do anúncio, o controle de vagas e do ciclo de vida (criar, consultar, modificar e excluir) com recursos nativos da linguagem e as limitações da versão em memória.
+2. **Objeto(s) de conhecimento que a banca mais explorou:** Variáveis, tipos de dados e atribuição, estruturas condicionais e de repetição, controle de fluxo em operações CRUD e evolução/limitações das estruturas de dados.
+3. **Pergunta que mais me desafiou e como respondi:** A pergunta sobre como eu declarei e utilizei as variáveis no Anuncify (e as limitações dessa escolha) exigiu detalhar tanto a criação/reatribuição das variáveis em Python quanto a lógica de cada operação do CRUD sem depender de listas estruturadas ou bibliotecas externas. Respondi explicando que as variáveis são declaradas por atribuição na linguagem e usadas para armazenar os campos do anúncio e controlar o estado nas operações de criar (respeitando o limite de 3 vagas), consultar, modificar (validando existência antes de sobrescrever) e excluir (limpando as variáveis para liberar vaga), assumindo com clareza os limites de capacidade, ausência de listas estruturadas e armazenamento apenas em memória.
+4. **O que levo deste semestre para o próximo módulo:** Levo o domínio das bases de lógica de programação, controle de fluxo e raciocínio estruturado para sustentar decisões técnicas, além do hábito de registrar hipóteses, erros, correções e transferências para problemas mais complexos.
 
 ---
 
